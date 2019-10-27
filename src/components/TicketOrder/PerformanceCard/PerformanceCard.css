@@ -1,0 +1,107 @@
+.performance-card {
+    min-width: 350px;
+    flex-grow: 2;
+    flex-basis: 0;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: -2px;
+    color: #151515;
+    position: relative;
+}
+
+.performance-card:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #7b7b7b;
+    height: 100%;
+}
+
+.performance-card:after {
+    content: ' ';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #7b7b7b;
+    height: 100%;
+}
+
+.performance-card.active-card,
+.performance-card:hover {
+    z-index: 10;
+    background-color: #FC4444;
+    color: white;
+}
+
+.performance-card.active-card:before,
+.performance-card.active-card:after,
+.performance-card:hover:before,
+.performance-card:hover:after {
+    background-color: #FC4444;
+}
+
+.performance-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.performance-card-genres {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+.genres-label {
+    margin-right: 15px;
+}
+
+.genre-item {
+    margin-right: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 2px 10px;
+}
+
+.performance-card.active-card .genre-item,
+.performance-card:hover .genre-item {
+    color: #151515;
+}
+
+.genre-item:last-child {
+    margin-right: 0;
+}
+
+.session-date {
+    margin-right: 20px;
+    color: #0a0a0a;
+    padding: 2px 6px;
+}
+
+.session-choice-content {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.session-choice-title {
+    margin-right: 30px;
+}
+
+.MuiFormControl-root.session {
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+
+.MuiSelect-root.session-select {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

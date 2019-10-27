@@ -1,0 +1,12 @@
+.performance-choice-step-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.performance-choice-step-title {
+    text-align: left;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}

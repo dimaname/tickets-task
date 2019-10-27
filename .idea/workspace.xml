@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="220470a7-5082-4ee1-8674-c9ae017f7c99" name="Default" comment="" />
+    <list default="true" id="220470a7-5082-4ee1-8674-c9ae017f7c99" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/sessionStorage.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiceStep.tsx" afterPath="$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiceStep/PerformanceChoiceStep.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/App/App.css" afterPath="$PROJECT_DIR$/src/components/App/App.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/App/App.tsx" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.css" afterPath="$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.tsx" afterPath="$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/sessions-data.json" afterPath="$PROJECT_DIR$/src/data/sessions-data.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/deserializeSessionsDTO.ts" afterPath="$PROJECT_DIR$/src/models/deserializeSessionsDTO.ts" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,115 +26,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/App/App.tsx">
+      <file leaf-file-name="CustomerDataInputStep.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/CustomerDataInputStep/CustomerDataInputStep.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <marker date="1572079920114" expanded="true" signature="505:592" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TicketOrder.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PerformanceChoiceStep.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiceStep.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TicketOrder.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="454">
+              <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ErrorMessage.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/ErrorMessage.tsx">
+      <file leaf-file-name="CustomerDataInputStep.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/CustomerDataInputStep/CustomerDataInputStep.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="25" />
+            <state relative-caret-position="311">
+              <caret line="138" column="27" lean-forward="true" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="emailValidator.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/emailValidator.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PerformancesDTOModel.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/PerformancesDTOModel.ts">
+      <file leaf-file-name="makePickerWithState.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/pickers/Picker/makePickerWithState.d.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="8" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="8" />
+              <caret line="9" column="113" lean-forward="true" selection-start-line="9" selection-start-column="113" selection-end-line="9" selection-end-column="113" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ticketsApiClient.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/apiClients/ticketsApiClient.ts">
+      <file leaf-file-name="KeyboardDateInput.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/pickers/_shared/KeyboardDateInput.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="78" lean-forward="false" selection-start-line="20" selection-start-column="78" selection-end-line="20" selection-end-column="78" />
-              <folding>
-                <element signature="e#0#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="minimalPromiseTime.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/minimalPromiseTime.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deserializeSessionsDTO.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/deserializeSessionsDTO.ts">
+      <file leaf-file-name="InputBase.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/InputBase/InputBase.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="38" column="92" lean-forward="false" selection-start-line="38" selection-start-column="92" selection-end-line="38" selection-end-column="92" />
-              <folding>
-                <element signature="e#1#139#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextField.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/TextField/TextField.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,28 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>options</find>
-      <find>getColumnsNames</find>
-      <find>selectedRowId</find>
-      <find>onRowClick</find>
-      <find>calculateTableRows</find>
-      <find>selectedRowMata</find>
-      <find>this.state</find>
-      <find>onst selectedRowMata = this.state.selectedRowMata.id</find>
-      <find>classNames</find>
-      <find>babel</find>
-      <find>abel-plugin-named-asset-</find>
-      <find>transform-object-rest-spread</find>
-      <find>babel-plugin-named-asset-import</find>
-      <find>ugin-transform-arrow-func</find>
-      <find>rrow-func</find>
-      <find>typeS</find>
-      <find>ypeScr</find>
-      <find>gin-proposal-class-p</find>
-      <find>plugin-proposal-optional-chaining</find>
-      <find>ransform-arrow-functi</find>
-      <find>chunk</find>
-      <find>entry</find>
       <find>0.chunk.js (7824,34)</find>
       <find>splitChunks:</find>
       <find>ansform-block-sco</find>
@@ -170,8 +119,34 @@
       <find>ansi-styles</find>
       <find>rules</find>
       <find>hot</find>
+      <find>map</find>
+      <find>getSessionsByPerformance</find>
+      <find>debugger;</find>
+      <find>age</find>
+      <find>onSessionSelect</find>
+      <find>;</find>
+      <find>onSelect</find>
+      <find>onPerformanceSelect</find>
+      <find>user-data</find>
+      <find>customer-data</find>
+      <find>onSessionSelect = (event: R</find>
+      <find>date</find>
+      <find>date-fns</find>
+      <find>className=</find>
+      <find>checked</find>
       <find>performances</find>
+      <find>orderStepParse</find>
+      <find>MenuItem</find>
+      <find>session</find>
+      <find>PaymentType</find>
+      <find>margin</find>
+      <find>class</find>
+      <find>disableToolbar</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>customer-data</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -179,10 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/data.json.js" />
-        <option value="$PROJECT_DIR$/src/data.json" />
-        <option value="$PROJECT_DIR$/src/Models/dataModel.ts" />
-        <option value="$PROJECT_DIR$/src/Models/desirialiseDataModel.ts" />
         <option value="$PROJECT_DIR$/src/App.test.tsx" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/Table.tsx" />
@@ -196,14 +167,11 @@
         <option value="$PROJECT_DIR$/src/components/RowsSettingsModal/RowsSettingsModal.tsx" />
         <option value="$PROJECT_DIR$/src/data/data.json" />
         <option value="$PROJECT_DIR$/src/components/Table/Table.css" />
-        <option value="$PROJECT_DIR$/src/components/App/App.css" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/package-lock.json" />
         <option value="$PROJECT_DIR$/config/webpack.config.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/data/perfomance-data.json" />
-        <option value="$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.css" />
         <option value="$PROJECT_DIR$/src/Models/DataModel.ts" />
         <option value="$PROJECT_DIR$/src/Models/PerformancesDTOModel.ts" />
         <option value="$PROJECT_DIR$/src/Models/deserializeDataModel.ts" />
@@ -212,18 +180,31 @@
         <option value="$PROJECT_DIR$/src/components/App/App.test.tsx" />
         <option value="$PROJECT_DIR$/src/TicketsApiClient/ticketsApiClient.ts" />
         <option value="$PROJECT_DIR$/src/components/RowsSettingsModal/RowSettings.tsx" />
-        <option value="$PROJECT_DIR$/src/models/deserializeSessionsDTO.ts" />
         <option value="$PROJECT_DIR$/src/index.tsx" />
         <option value="$PROJECT_DIR$/src/models/deserializePerformancesDTO.ts" />
-        <option value="$PROJECT_DIR$/src/components/App/App.tsx" />
         <option value="$PROJECT_DIR$/src/components/Table/TableRow.tsx" />
         <option value="$PROJECT_DIR$/src/utils/minimalPromiseTime.ts" />
         <option value="$PROJECT_DIR$/src/apiClients/ticketsApiClient.ts" />
         <option value="$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiseStep.ts" />
         <option value="$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiceStep.ts" />
         <option value="$PROJECT_DIR$/src/components/TicketOrder/ErrorMessage.tsx" />
-        <option value="$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.tsx" />
+        <option value="$PROJECT_DIR$/src/components/TicketOrder/PerformanceCard.tsx" />
         <option value="$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiceStep.tsx" />
+        <option value="$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.css" />
+        <option value="$PROJECT_DIR$/src/components/App/App.css" />
+        <option value="$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiceStep/PerformanceChoiceStep.css" />
+        <option value="$PROJECT_DIR$/src/models/deserializeSessionsDTO.ts" />
+        <option value="$PROJECT_DIR$/src/data/sessions-data.json" />
+        <option value="$PROJECT_DIR$/src/components/TicketOrder/PerformanceCard/PerformanceCard.css" />
+        <option value="$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiceStep/PerformanceChoiceStep.tsx" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/components/TicketOrder/PerformanceCard/PerformanceCard.tsx" />
+        <option value="$PROJECT_DIR$/src/utils/sessionStorage.ts" />
+        <option value="$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.tsx" />
+        <option value="$PROJECT_DIR$/src/components/App/App.tsx" />
+        <option value="$PROJECT_DIR$/src/components/TicketOrder/CustomerDataInputStep/CustomerDataInputStep.css" />
+        <option value="$PROJECT_DIR$/src/utils/emailValidator.ts" />
+        <option value="$PROJECT_DIR$/src/components/TicketOrder/CustomerDataInputStep/CustomerDataInputStep.tsx" />
       </list>
     </option>
   </component>
@@ -245,7 +226,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="241" />
     <option name="y" value="-21" />
     <option name="width" value="1294" />
@@ -285,7 +266,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -302,14 +282,119 @@
               <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
               <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@types" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
               <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@types" type="462c0819:PsiDirectoryNode" />
-              <item name="react" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="Input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="InputBase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="Select" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="TextField" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="_helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="_shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="_shared" type="462c0819:PsiDirectoryNode" />
+              <item name="hooks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="DatePicker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="Picker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="typings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@material-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="pickers" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
@@ -346,13 +431,17 @@
               <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="TicketOrder" type="462c0819:PsiDirectoryNode" />
+              <item name="CustomerDataInputStep" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="tickets-task" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="TicketOrder" type="462c0819:PsiDirectoryNode" />
+              <item name="PerformanceCard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tickets-task" type="b2602c69:ProjectViewProjectNode" />
@@ -364,6 +453,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -384,17 +474,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tmp\Desktop\tickets-task\src\utils" />
       <recent name="C:\Users\tmp\Desktop\tickets-task\src\components\TicketOrder" />
+      <recent name="C:\Users\tmp\Desktop\tickets-task\src\components\TicketOrder\PerformanceChoiceStep" />
+      <recent name="C:\Users\tmp\Desktop\tickets-task\src\components\TicketOrder\PerformanceCard" />
       <recent name="C:\Users\tmp\Desktop\tickets-task\src\Models" />
-      <recent name="C:\Users\tmp\Desktop\tickets-task\src\data" />
-      <recent name="C:\Users\tmp\Desktop\table-task\src\components\RowsSettingsModal" />
-      <recent name="C:\Users\tmp\Desktop\table-task\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tmp\Desktop\tickets-task\src\components\TicketOrder\PerformanceChoiceStep" />
+      <recent name="C:\Users\tmp\Desktop\tickets-task\src\components\TicketOrder\PerformanceCard" />
       <recent name="C:\Users\tmp\Desktop\table-task\src\components\Table" />
       <recent name="C:\Users\tmp\Desktop\table-task\src\components\App" />
       <recent name="C:\Users\tmp\Desktop\table-task\src" />
-      <recent name="C:\Users\tmp\Desktop\table-task\data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -426,21 +517,26 @@
       <workItem from="1572074306484" duration="563000" />
       <workItem from="1572075392150" duration="39000" />
       <workItem from="1572075580386" duration="3747000" />
-      <workItem from="1572080179558" duration="6105000" />
+      <workItem from="1572080179558" duration="6120000" />
+      <workItem from="1572086769868" duration="1262000" />
+      <workItem from="1572088074425" duration="12217000" />
+      <workItem from="1572165527826" duration="5528000" />
+      <workItem from="1572172269849" duration="10705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42839000" />
+    <option name="totallyTimeSpent" value="72566000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32664436" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13632782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -453,7 +549,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -470,137 +565,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Table/TableRow.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SettingsPanel/SettingsPanel.tsx" />
-    <entry file="file://$PROJECT_DIR$/src/serviceWorker.ts" />
-    <entry file="file://$PROJECT_DIR$/src/logo.svg" />
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-929">
-          <caret line="104" column="10" lean-forward="false" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/IconButton/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="true" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/IconButton/IconButton.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/SvgIcon/SvgIcon.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SettingsPanel/SettingsPanel.css" />
-    <entry file="file://$PROJECT_DIR$/src/components/Table/Table.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Checkbox/Checkbox.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="7985" column="20" lean-forward="true" selection-start-line="7985" selection-start-column="20" selection-end-line="7985" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/global.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="25" column="10" lean-forward="false" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SettingsPanel/SettingsPanel.tsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/RowsSettingsModal/RowsSettingsModal.css" />
-    <entry file="file://$PROJECT_DIR$/src/components/RowsSettingsModal/RowsSettingsModal.tsx" />
-    <entry file="file://$PROJECT_DIR$/node_modules/highcharts/highcharts.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2161">
-          <caret line="216613" column="17" lean-forward="false" selection-start-line="216613" selection-start-column="17" selection-end-line="216613" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Table/Table.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/build.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1667">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/webpackDevServer.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1048">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
-          <caret line="136" column="37" lean-forward="false" selection-start-line="136" selection-start-column="37" selection-end-line="136" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -646,83 +614,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/sessions-data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/SessionsDTOModel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/RowsSettingsModal/RowSettings.tsx" />
-    <entry file="file://$PROJECT_DIR$/src/models/deserializeSessionsDTO.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="38" column="92" lean-forward="false" selection-start-line="38" selection-start-column="92" selection-end-line="38" selection-end-column="92" />
-          <folding>
-            <element signature="e#1#139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/rowsDataComparator.ts" />
     <entry file="file://$PROJECT_DIR$/src/components/App/App.test.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="34">
           <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Table/TableHead.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Table/TableRow.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/PerformancesDTOModel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="8" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Table/TableHead.tsx" />
+    <entry file="file://$PROJECT_DIR$/src/components/Table/TableRow.tsx" />
     <entry file="file://$PROJECT_DIR$/src/models/deserializePerformancesDTO.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="54" lean-forward="false" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,6 +643,257 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="444" column="8" lean-forward="false" selection-start-line="444" selection-start-column="8" selection-end-line="444" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/PerformancesDTOModel.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/ErrorMessage.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/SessionsDTOModel.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/deserializeSessionsDTO.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/sessions-data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiceStep/PerformanceChoiceStep.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@date-io/date-fns/build/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiceStep/PerformanceChoiceStep.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/apiClients/ticketsApiClient.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/PerformanceCard/PerformanceCard.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="54" column="59" lean-forward="false" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/PerformanceCard/PerformanceCard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="100" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="51" lean-forward="false" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+          <folding>
+            <marker date="1572182519094" expanded="true" signature="666:786" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/pickers/_helpers/text-field-helper.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/pickers/views/Calendar/Calendar.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/pickers/typings/BasePicker.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/pickers/_shared/hooks/useKeyboardPickerState.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="6" column="58" lean-forward="false" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="49" column="31" lean-forward="false" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Select/Select.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Input/Input.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="56" lean-forward="true" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/InputBase/InputBase.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/CustomerDataInputStep/CustomerDataInputStep.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/pickers/MuiPickersUtilsProvider.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/pickers/Picker/makePickerWithState.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="9" column="113" lean-forward="true" selection-start-line="9" selection-start-column="113" selection-end-line="9" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/pickers/_shared/KeyboardDateInput.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/TextField/TextField.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/pickers/DatePicker/DatePicker.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="51" column="58" lean-forward="false" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -742,65 +906,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/apiClients/ticketsApiClient.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="78" lean-forward="false" selection-start-line="20" selection-start-column="78" selection-end-line="20" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1572079920114" expanded="true" signature="505:592" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
-          <caret line="444" column="8" lean-forward="false" selection-start-line="444" selection-start-column="8" selection-end-line="444" selection-end-column="8" />
+          <caret line="829" column="4" lean-forward="false" selection-start-line="829" selection-start-column="4" selection-end-line="829" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.css">
+    <entry file="file://$PROJECT_DIR$/src/utils/emailValidator.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/ErrorMessage.tsx">
+    <entry file="file://$PROJECT_DIR$/src/utils/sessionStorage.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="25" />
+        <state relative-caret-position="187">
+          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/PerformanceChoiceStep.tsx">
+    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/CustomerDataInputStep/CustomerDataInputStep.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TicketOrder/TicketOrder.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        <state relative-caret-position="311">
+          <caret line="138" column="27" lean-forward="true" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>

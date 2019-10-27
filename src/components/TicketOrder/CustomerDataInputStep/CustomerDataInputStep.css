@@ -1,0 +1,33 @@
+.customer-data-step {
+}
+
+.customer-data-step-title {
+    text-align: left;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.customer-data-step-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto 20px;
+}
+
+.buttons-container button {
+    margin-right: 10px;
+}
+
+.buttons-container button:last-child {
+    margin-right: 0;
+}
+
+.MuiFormControl-root.payment-select {
+    min-width: 150px;
+    text-align: left;
+}
+
+.MuiFormControl-root.customer-data-field {
+    margin-bottom: 20px;
+}

@@ -1,3 +1,11 @@
 .ticket-order{
+    min-height: 400px;
+}
 
+.ticket-order-title{
+    font-size: 24px;
+    text-align: left;
+    line-height: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }

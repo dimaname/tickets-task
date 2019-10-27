@@ -1,4 +1,3 @@
-
 import {
     PerformanceRelation, Relation, Session, SessionAttributes, SessionRelationships,
     SessionsDTO
@@ -21,14 +20,13 @@ export const deserializeSession = function (obj: any): Session {
 
 export const deserializeSessionAttributes = function (obj: any): SessionAttributes {
     const sessionAttributes = {} as SessionAttributes;
-    sessionAttributes.from = obj.title;
-    sessionAttributes.to = obj.genres;
-
+    sessionAttributes.from = obj.from;
+    sessionAttributes.to = obj.to;
     return sessionAttributes;
 };
 
 
-export const deserializeSessionRelationships= function (obj: any): SessionRelationships {
+export const deserializeSessionRelationships = function (obj: any): SessionRelationships {
     const sessionRelationships = {} as SessionRelationships;
     sessionRelationships.performance = deserializeRelation<PerformanceRelation>(obj.performance, deserializePerformanceRelation);
 
@@ -36,16 +34,16 @@ export const deserializeSessionRelationships= function (obj: any): SessionRelati
 };
 
 
-export const deserializeRelation = function<T> (obj: any, deserializer_T: (obj: any) => T ): Relation<T> {
+export const deserializeRelation = function <T>(obj: any, deserializer_T: (obj: any) => T): Relation<T> {
     const relation = {} as Relation<T>;
     relation.data = deserializer_T(obj);
 
     return relation;
 };
 
-export const deserializePerformanceRelation = function(obj: any): PerformanceRelation{
+export const deserializePerformanceRelation = function (obj: any): PerformanceRelation {
     const performanceRelation = {} as PerformanceRelation;
-    performanceRelation.id = obj.id;
+    performanceRelation.id = obj.data.id;
     performanceRelation.type = "performances";
 
     return performanceRelation;
