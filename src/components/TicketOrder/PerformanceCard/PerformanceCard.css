@@ -81,7 +81,6 @@
 
 .session-date {
     margin-right: 20px;
-    color: #0a0a0a;
     padding: 2px 6px;
 }
 
@@ -100,7 +99,12 @@
     margin-bottom: 20px;
 }
 
-.MuiSelect-root.session-select {
+.performance-card.active-card .session-date-wrapper,
+.performance-card:hover .session-date-wrapper {
+    color: #ffffff;
+}
+
+.session-date-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

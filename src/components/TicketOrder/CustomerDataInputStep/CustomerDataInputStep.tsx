@@ -1,6 +1,7 @@
 import *  as React from 'react';
 import './CustomerDataInputStep.css';
-import {PaymentType} from "../TicketOrder";
+import {CustomerData} from "../TicketOrder";
+import ruLocale from "date-fns/locale/ru";
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
@@ -17,55 +18,62 @@ import {
 import {emailValidator} from "../../../utils/emailValidator";
 
 type Props = {
-    toNextStep: (firstName: string, lastName: string, birthday: string, email: string, paymentType: PaymentType) => void,
+    customerData: CustomerData,
+    onPropertyChanged: <K extends keyof CustomerData>(propName: K, propValue: CustomerData[K]) => void,
+    toNextStep: () => void,
     toPrevStep: () => void,
 }
 
 type State = {
-    acceptRules: boolean;
     emailError: boolean;
-    paymentType: PaymentType | null;
-    birthday: Date | null;
-    firstName: string | null;
-    lastName: string | null;
-    email: string | null;
+    email: string | null,
 }
 
 export class CustomerDataInputStep extends React.Component<Props, State> {
     state: State = {
-        acceptRules: false,
-        emailError: false,
-        paymentType: null,
-        birthday: null,
-        firstName: null,
-        lastName: null,
         email: null,
+        emailError: false,
+    };
+
+    static getDerivedStateFromProps(nextProps: Props, prevState: State) {
+        const email = nextProps.customerData.email;
+        if (prevState.email !== email) {
+            return {
+                email,
+                emailError: email && !emailValidator(email)
+            };
+        }
+
+        return null;
     };
 
     render() {
-        const {acceptRules, paymentType, birthday, firstName, lastName, email, emailError} = this.state;
+        const {email, emailError} = this.state;
+        const {acceptRules, paymentType, birthday, firstName, secondName} = this.props.customerData;
         const toPaymentButtonDisabled = !acceptRules
-            || !firstName || !lastName || !email || emailError
+            || !firstName || !secondName || !email || emailError
             || (!birthday || birthday && isNaN(birthday.getTime()));
         return <div className="customer-data-step">
-            <div className="customer-data-step-title">Вввод данных покупателя</div>
+            <div className="customer-data-step-title">Ввод данных покупателя</div>
             <div className="customer-data-step-content">
                 <TextField
                     required
                     label="Имя"
                     value={firstName || ''}
                     margin="none"
+                    onChange={this.onFirstNameChange}
                     classes={{root: 'customer-data-field'}}
                 />
                 <TextField
                     required
                     label="Фамилия"
-                    value={lastName || ''}
+                    value={secondName || ''}
                     margin="none"
+                    onChange={this.onSecondNameChange}
                     classes={{root: 'customer-data-field'}}
                 />
                 <FormControl classes={{root: 'customer-data-field'}} required>
-                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                    <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ruLocale}>
                         <KeyboardDatePicker
                             required
                             variant="inline"
@@ -115,7 +123,7 @@ export class CustomerDataInputStep extends React.Component<Props, State> {
                     Назад
                 </Button>
                 <Button variant="contained" color="primary" disabled={toPaymentButtonDisabled}
-                        onClick={this.toPaymentsStep}>
+                        onClick={this.props.toNextStep}>
                     Перейти к оплате
                 </Button>
             </div>
@@ -123,36 +131,28 @@ export class CustomerDataInputStep extends React.Component<Props, State> {
     }
 
     private onBirthdaySelect = (date: Date | null) => {
-        this.setState({
-            birthday: date,
-        });
+        this.props.onPropertyChanged('birthday', date);
     };
 
     private onPaymentTypeSelect = (event: React.ChangeEvent<{ name?: string; value: any }>) => {
-        this.setState({
-            paymentType: event.target.value,
-        });
+        this.props.onPropertyChanged('paymentType', event.target.value);
     };
 
     private onChangeAcceptRules = (event: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({
-            acceptRules: event.target.checked,
-        });
+        this.props.onPropertyChanged('acceptRules', event.target.checked);
     };
+
     private onEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const email = event.target.value;
-        console.error(emailValidator(email))
-        this.setState({
-            emailError: !emailValidator(email),
-            email,
-        });
+        this.props.onPropertyChanged('email', event.target.value);
     };
 
-    private toPaymentsStep = () => {
-
+    private onFirstNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        this.props.onPropertyChanged('firstName', event.target.value);
     };
 
-
+    private onSecondNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        this.props.onPropertyChanged('secondName', event.target.value);
+    };
 }
 
 

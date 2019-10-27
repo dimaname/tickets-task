@@ -57,21 +57,22 @@ export class PerformanceCard extends React.Component<Props, State> {
                     autoWidth={true}
                     value={selectedSessionId}
                     onChange={this.onSessionSelect}
-                    classes={{root: 'session-select'}}
                     onOpen={this.onOpenSelect}
                     onClose={this.onCloseSelect}>
                     <MenuItem value={''}>-</MenuItem>
                     {
                         sessions.map(session => <MenuItem key={session.id} value={session.id}>
-                            <div
-                                className="session-date">{session.from.toLocaleDateString()} {session.from.toLocaleTimeString()}</div>
-                            Идет: {session.duration}мин.
+                            <div className="session-date-wrapper">
+                                <div className="session-date">
+                                    {session.from.toLocaleDateString()} {session.from.toLocaleTimeString()}
+                                </div>
+                                Идет: {session.duration}мин.
+                            </div>
                         </MenuItem>)
                     }
                 </Select>
             </FormControl>
         }
-
 
         return <div className="session-choice-content">
             <div className="session-choice-title">Сеансы:</div>

@@ -25,6 +25,7 @@ type State = {
     currentStep: OrderSteps;
     selectedPerformanceId: string | null;
     selectedSessionId: string | null;
+    customerData: CustomerData;
 }
 
 export type SessionsByPerformances = {
@@ -35,6 +36,15 @@ export type SessionsByPerformancesItem = {
     id: string;
     from: Date;
     duration: number;
+}
+
+export type CustomerData = {
+    firstName: string | null;
+    secondName: string | null;
+    email: string | null;
+    birthday: Date | null;
+    paymentType: PaymentType | null;
+    acceptRules: boolean;
 }
 
 export type PaymentType = 'card' | 'offline';
@@ -49,6 +59,7 @@ export class TicketOrder extends React.Component<Props, State> {
         selectedPerformanceId: null,
         selectedSessionId: null,
         currentStep: 'performance-choice',
+        customerData: getDefaultCustomerData(),
     };
 
     async componentDidMount() {
@@ -68,10 +79,12 @@ export class TicketOrder extends React.Component<Props, State> {
             const restoredCurrentStep = sessionStorage.getItem('currentStep');
             const selectedPerformanceId = sessionStorage.getItem('selectedPerformanceId');
             const selectedSessionId = sessionStorage.getItem('selectedSessionId');
+            const restoredCustomerData = sessionStorage.getItem('customerData');
             const restoredProps = {
                 currentStep: orderStepParse(restoredCurrentStep),
-                selectedPerformanceId: selectedPerformanceId,
-                selectedSessionId: selectedSessionId,
+                customerData: customerDataParse(restoredCustomerData),
+                selectedPerformanceId,
+                selectedSessionId,
             };
             this.setState({
                 isLoading: false,
@@ -113,7 +126,10 @@ export class TicketOrder extends React.Component<Props, State> {
                                               selectedSessionId={selectedSessionId}
                                               toNextStep={this.firstStepCompleted}/>;
             case 'customer-data':
-                return <CustomerDataInputStep toNextStep={this.secondStepCompleted} toPrevStep={this.toFirstStep}/>;
+                const {customerData} = this.state;
+                return <CustomerDataInputStep toNextStep={this.secondStepCompleted} toPrevStep={this.toFirstStep}
+                                              customerData={customerData}
+                                              onPropertyChanged={this.onCustomerPropertyChanged}/>;
             case 'payments':
                 return null;
         }
@@ -152,9 +168,19 @@ export class TicketOrder extends React.Component<Props, State> {
         });
     };
 
-    private secondStepCompleted = (firstName: string, lastName: string, birthday: string, email: string, paymentType: PaymentType) => {
+    private onCustomerPropertyChanged = <K extends keyof CustomerData>(propName: K, propValue: CustomerData[K]) => {
+        const customerData = {
+            ...this.state.customerData,
+            [propName]: propValue,
+        };
 
-    }
+        this.props.sessionStorage.setItem('customerData', JSON.stringify(customerData));
+        this.setState({customerData});
+    };
+
+    private secondStepCompleted = () => {
+
+    };
 }
 
 function getSessionsByPerformance(sessions: SessionsDTO): SessionsByPerformances {
@@ -188,6 +214,35 @@ function orderStepParse(step: string | null): OrderSteps {
         case 'performance-choice':
         default:
             return 'performance-choice';
+    }
+}
+
+function customerDataParse(jsonString: string | null): CustomerData {
+
+    const defaultCustomerData = getDefaultCustomerData();
+    if (!jsonString)
+        return defaultCustomerData;
+    const obj = JSON.parse(jsonString);
+
+    return {
+        firstName: obj.firstName ? obj.firstName : defaultCustomerData.firstName,
+        secondName: obj.secondName ? obj.secondName : defaultCustomerData.secondName,
+        email: obj.email ? obj.email : defaultCustomerData.email,
+        birthday: obj.birthday ? new Date(obj.birthday) : defaultCustomerData.birthday,
+        paymentType: obj.paymentType ? obj.paymentType : defaultCustomerData.paymentType,
+        acceptRules: obj.acceptRules ? obj.acceptRules : defaultCustomerData.acceptRules,
+    }
+}
+
+
+function getDefaultCustomerData(): CustomerData {
+    return {
+        firstName: null,
+        secondName: null,
+        email: null,
+        birthday: null,
+        paymentType: null,
+        acceptRules: false,
     }
 }
 
