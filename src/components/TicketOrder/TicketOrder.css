@@ -1,11 +1,29 @@
-.ticket-order{
+.ticket-order {
     min-height: 400px;
 }
 
-.ticket-order-title{
+.ticket-order-title {
     font-size: 24px;
     text-align: left;
     line-height: 24px;
     margin-bottom: 20px;
     font-weight: 600;
+}
+
+.MuiSnackbarContent-root.successful-snackbar {
+    background-color: #43A047;
+}
+
+.MuiSnackbarContent-root.error-snackbar {
+    background-color: #D32F2F;
+}
+
+.snackbar-message-wrapper {
+    display: flex;
+    align-items: center;
+    line-height: 10px;
+}
+
+.snackbar-icon-wrapper {
+    margin-right: 15px;
 }

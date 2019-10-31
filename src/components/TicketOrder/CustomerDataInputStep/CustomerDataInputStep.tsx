@@ -4,12 +4,13 @@ import {CustomerData} from "../TicketOrder";
 import ruLocale from "date-fns/locale/ru";
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import DateFnsUtils from '@date-io/date-fns';
 import Checkbox from '@material-ui/core/Checkbox';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import InputLabel from '@material-ui/core/InputLabel';
 import {
     MuiPickersUtilsProvider,
@@ -19,9 +20,11 @@ import {emailValidator} from "../../../utils/emailValidator";
 
 type Props = {
     customerData: CustomerData,
+    requestWillBeRejected: boolean,
     onPropertyChanged: <K extends keyof CustomerData>(propName: K, propValue: CustomerData[K]) => void,
     toNextStep: () => void,
     toPrevStep: () => void,
+    changeRequestWillBeRejected: (value: boolean) => void,
 }
 
 type State = {
@@ -50,13 +53,13 @@ export class CustomerDataInputStep extends React.Component<Props, State> {
     render() {
         const {email, emailError} = this.state;
         const {acceptRules, paymentType, birthday, firstName, secondName} = this.props.customerData;
-        const toPaymentButtonDisabled = !acceptRules
-            || !firstName || !secondName || !email || emailError
-            || (!birthday || birthday && isNaN(birthday.getTime()));
+        const toPaymentButtonDisabled = !acceptRules || !firstName || !secondName || !email || emailError
+            || (!birthday || (birthday && isNaN(birthday.getTime())));
         return <div className="customer-data-step">
             <div className="customer-data-step-title">Ввод данных покупателя</div>
             <div className="customer-data-step-content">
                 <TextField
+                    autoFocus
                     required
                     label="Имя"
                     value={firstName || ''}
@@ -108,7 +111,7 @@ export class CustomerDataInputStep extends React.Component<Props, State> {
                         }}
                     >
                         <MenuItem value={'card'}>Картой</MenuItem>
-                        <MenuItem value={'offline'}>Оффлайн</MenuItem>
+                        <MenuItem value={'cash'}>Оффлайн</MenuItem>
                     </Select>
                 </FormControl>
                 <FormControl required error={false}>
@@ -124,8 +127,18 @@ export class CustomerDataInputStep extends React.Component<Props, State> {
                 </Button>
                 <Button variant="contained" color="primary" disabled={toPaymentButtonDisabled}
                         onClick={this.props.toNextStep}>
-                    Перейти к оплате
+                    {paymentType === 'card' ? 'Перейти к оплате' : 'Заказать билет'}
                 </Button>
+                {paymentType === 'cash' && <FormControlLabel
+                    control={
+                        <Switch
+                            checked={this.props.requestWillBeRejected}
+                            onChange={this.changeRequestWillBeRejected}
+                            color="primary"
+                        />
+                    }
+                    label="reject request"
+                />}
             </div>
         </div>
     }
@@ -140,6 +153,10 @@ export class CustomerDataInputStep extends React.Component<Props, State> {
 
     private onChangeAcceptRules = (event: React.ChangeEvent<HTMLInputElement>) => {
         this.props.onPropertyChanged('acceptRules', event.target.checked);
+    };
+
+    private changeRequestWillBeRejected = (event: React.ChangeEvent<HTMLInputElement>) => {
+        this.props.changeRequestWillBeRejected(event.target.checked);
     };
 
     private onEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {

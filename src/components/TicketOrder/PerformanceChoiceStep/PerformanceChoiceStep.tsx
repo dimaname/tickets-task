@@ -1,8 +1,8 @@
 import *  as React from 'react';
 import './PerformanceChoiceStep.css';
 import {PerformancesDTO} from "../../../models/PerformancesDTOModel";
-import {PerformanceCard} from "../PerformanceCard/PerformanceCard";
 import {SessionsByPerformances} from "../TicketOrder";
+import {PerformanceCard} from "./PerformanceCard/PerformanceCard";
 
 
 type Props = {

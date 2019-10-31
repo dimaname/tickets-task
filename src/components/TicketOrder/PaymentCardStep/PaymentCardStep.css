@@ -1,0 +1,30 @@
+.payment-card-step-title {
+    text-align: left;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.payment-card {
+    max-width: 400px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-card-second-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.MuiFormControl-root.payment-card-field {
+    margin-bottom: 20px;
+}
+
+.MuiFormControl-root.payment-card-field.payment-card-field-date {
+    width: 150px;
+}
+
+.MuiFormControl-root.payment-card-field.payment-card-field-cvc {
+    width: 120px;
+}

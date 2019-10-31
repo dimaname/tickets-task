@@ -162,6 +162,7 @@ module.exports = function (webpackEnv) {
             isEnvDevelopment &&
             require.resolve('react-dev-utils/webpackHotDevClient'),
             // Finally, this is your app's code:
+            '@babel/polyfill',
             paths.appIndexJs,
             // We include the app code last so that if there is a runtime error during
             // initialization, it doesn't blow up the WebpackDevServer client, and
@@ -380,10 +381,11 @@ module.exports = function (webpackEnv) {
                                 plugins: [
                                     '@babel/plugin-transform-object-assign',
                                     ['@babel/plugin-proposal-class-properties', { 'loose': true }],
+                                    '@babel/plugin-transform-computed-properties',
+                                    '@babel/plugin-transform-classes',
                                     '@babel/plugin-transform-arrow-functions',
                                     '@babel/plugin-transform-async-to-generator',
-                                    '@babel/plugin-proposal-async-generator-functions',
-                                    '@babel/plugin-transform-classes',
+                                    '@babel/plugin-transform-regenerator',
                                     '@babel/plugin-proposal-object-rest-spread',
                                     '@babel/plugin-transform-spread',
                                     '@babel/plugin-transform-parameters',
@@ -391,6 +393,7 @@ module.exports = function (webpackEnv) {
                                     '@babel/plugin-transform-shorthand-properties',
                                     '@babel/plugin-transform-template-literals',
                                     '@babel/plugin-transform-block-scoping',
+                                    '@babel/plugin-transform-for-of',
                                     [
                                         require.resolve('babel-plugin-named-asset-import'),
 

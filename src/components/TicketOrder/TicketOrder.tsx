@@ -4,13 +4,19 @@ import {ITicketsApiClient} from "../../apiClients/ticketsApiClient";
 import {PerformancesDTO} from "../../models/PerformancesDTOModel";
 import {SessionsDTO} from "../../models/SessionsDTOModel";
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Snackbar from '@material-ui/core/Snackbar';
+import SnackbarContent from '@material-ui/core/SnackbarContent';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import ErrorIcon from '@material-ui/icons/Error'
 import {ErrorMessage} from "./ErrorMessage";
 import {PerformanceChoiceStep} from "./PerformanceChoiceStep/PerformanceChoiceStep";
 import {CustomerDataInputStep} from "./CustomerDataInputStep/CustomerDataInputStep";
 import {ISessionStorage} from "../../utils/sessionStorage";
+import {PaymentCardStep} from "./PaymentCardStep/PaymentCardStep";
+import {OrderDTO} from "../../models/OrderDTOModel";
 
 type LoadingState = 'idle' | 'loading' | 'error' | 'complete';
-type OrderSteps = 'performance-choice' | 'customer-data' | 'payments';
+type OrderSteps = 'performance-choice' | 'customer-data' | 'payment-card';
 
 type Props = {
     ticketsApiClient: ITicketsApiClient;
@@ -26,6 +32,10 @@ type State = {
     selectedPerformanceId: string | null;
     selectedSessionId: string | null;
     customerData: CustomerData;
+    paymentCard: PaymentCard | null;
+    isSuccessSnackbarOpened: boolean;
+    isErrorSnackbarOpened: boolean;
+    requestWillBeRejected: boolean;
 }
 
 export type SessionsByPerformances = {
@@ -47,7 +57,13 @@ export type CustomerData = {
     acceptRules: boolean;
 }
 
-export type PaymentType = 'card' | 'offline';
+export type PaymentCard = {
+    cardNumber: string,
+    cardDate: string,
+    cardCvc: string
+}
+
+export type PaymentType = 'card' | 'cash';
 
 
 export class TicketOrder extends React.Component<Props, State> {
@@ -60,6 +76,10 @@ export class TicketOrder extends React.Component<Props, State> {
         selectedSessionId: null,
         currentStep: 'performance-choice',
         customerData: getDefaultCustomerData(),
+        paymentCard: null,
+        isSuccessSnackbarOpened: false,
+        isErrorSnackbarOpened: false,
+        requestWillBeRejected: false,
     };
 
     async componentDidMount() {
@@ -94,9 +114,25 @@ export class TicketOrder extends React.Component<Props, State> {
     }
 
     render() {
+        const {isSuccessSnackbarOpened, isErrorSnackbarOpened} = this.state;
         return <div className="ticket-order">
             <div className="ticket-order-title">Заказ билета</div>
             {this.getContent()}
+            <Snackbar
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+                onClose={this.closeSnackbar}
+                open={isSuccessSnackbarOpened || isErrorSnackbarOpened}
+                autoHideDuration={6000}
+            >
+                {isSuccessSnackbarOpened
+                    ? <SnackbarContentWrapper success/>
+                    : isErrorSnackbarOpened
+                        ? <SnackbarContentWrapper success={false}/>
+                        : null}
+            </Snackbar>
         </div>
     }
 
@@ -117,7 +153,8 @@ export class TicketOrder extends React.Component<Props, State> {
     }
 
     private getCurrentStep(): React.ReactNode {
-        const currentStep = this.state.currentStep;
+        const {customerData, requestWillBeRejected, currentStep} = this.state;
+
         switch (currentStep) {
             case 'performance-choice':
                 const {performances, sessions, selectedPerformanceId, selectedSessionId} = this.state;
@@ -126,12 +163,15 @@ export class TicketOrder extends React.Component<Props, State> {
                                               selectedSessionId={selectedSessionId}
                                               toNextStep={this.firstStepCompleted}/>;
             case 'customer-data':
-                const {customerData} = this.state;
                 return <CustomerDataInputStep toNextStep={this.secondStepCompleted} toPrevStep={this.toFirstStep}
                                               customerData={customerData}
+                                              requestWillBeRejected={requestWillBeRejected}
+                                              changeRequestWillBeRejected={this.changeRequestWillBeRejected}
                                               onPropertyChanged={this.onCustomerPropertyChanged}/>;
-            case 'payments':
-                return null;
+            case 'payment-card':
+                return <PaymentCardStep requestWillBeRejected={requestWillBeRejected}
+                                        changeRequestWillBeRejected={this.changeRequestWillBeRejected}
+                                        onSubmit={this.onPaymentCardSubmit} toPrevStep={this.toSecondStep}/>;
         }
         const allCaseHandled: never = currentStep;
         return;
@@ -156,10 +196,12 @@ export class TicketOrder extends React.Component<Props, State> {
         });
         this.props.sessionStorage.setItem('selectedPerformanceId', performanceId);
         this.props.sessionStorage.setItem('selectedSessionId', sessionId);
-        this.changeStep('customer-data');
+        this.toSecondStep();
     };
 
     private toFirstStep = () => this.changeStep('performance-choice');
+
+    private toSecondStep = () => this.changeStep('customer-data');
 
     private changeStep = (nextStep: OrderSteps) => {
         this.props.sessionStorage.setItem('currentStep', nextStep);
@@ -179,9 +221,79 @@ export class TicketOrder extends React.Component<Props, State> {
     };
 
     private secondStepCompleted = () => {
+        if (this.state.customerData.paymentType === 'card')
+            this.changeStep('payment-card');
+        else {
+            this.makeTicketsOrder();
+        }
+    };
+
+    private changeRequestWillBeRejected = (value: boolean) => {
+        this.setState({requestWillBeRejected: value});
+    };
+
+    private onPaymentCardSubmit = (paymentCard: PaymentCard) => {
+        this.setState({paymentCard});
+        this.makeTicketsOrder();
+    };
+
+    private async makeTicketsOrder() {
+        const {selectedSessionId, customerData, paymentCard, requestWillBeRejected} = this.state;
+        try {
+            const order = makeOrderDTO(selectedSessionId, customerData, paymentCard);
+            await this.props.ticketsApiClient.makeTicketsOrder(order, requestWillBeRejected);
+            this.setState({isSuccessSnackbarOpened: true, isErrorSnackbarOpened: false})
+            this.toFirstStep();
+
+        } catch (e) {
+            this.setState({isErrorSnackbarOpened: true, isSuccessSnackbarOpened: false})
+        }
 
     };
+
+    private closeSnackbar = (event?: React.SyntheticEvent, reason?: string) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        this.setState({isSuccessSnackbarOpened: false, isErrorSnackbarOpened: false});
+    }
 }
+
+function makeOrderDTO(sessionId: string | null, customerData: CustomerData, paymentCard: PaymentCard | null): OrderDTO {
+    const {firstName, secondName, birthday, email} = customerData;
+    if (!sessionId || !firstName || !secondName || !birthday || !email)
+        throw new Error('Failed to make OrderDTO model.');
+    const order: OrderDTO = {
+        data: {
+            type: 'orders',
+            attributes: {
+                session: sessionId,
+                first_name: firstName,
+                last_name: secondName,
+                birthday: birthday.toLocaleDateString(),
+                email,
+                payment: {
+                    type: 'cash',
+                }
+            }
+        }
+    };
+
+
+    if (customerData.paymentType === 'card' && paymentCard)
+        order.data.attributes.payment = {
+            type: "card",
+            card: {
+                number: paymentCard.cardNumber,
+                valid_to: paymentCard.cardDate,
+                name: paymentCard.cardCvc
+            }
+        };
+
+
+    return order;
+}
+
 
 function getSessionsByPerformance(sessions: SessionsDTO): SessionsByPerformances {
     return sessions.data.reduce((result: SessionsByPerformances, session) => {
@@ -209,8 +321,8 @@ function orderStepParse(step: string | null): OrderSteps {
     switch (step) {
         case 'customer-data':
             return 'customer-data';
-        case 'payments':
-            return 'payments';
+        case 'payment-card':
+            return 'payment-card';
         case 'performance-choice':
         default:
             return 'performance-choice';
@@ -218,7 +330,6 @@ function orderStepParse(step: string | null): OrderSteps {
 }
 
 function customerDataParse(jsonString: string | null): CustomerData {
-
     const defaultCustomerData = getDefaultCustomerData();
     if (!jsonString)
         return defaultCustomerData;
@@ -246,3 +357,25 @@ function getDefaultCustomerData(): CustomerData {
     }
 }
 
+export interface SnackbarContentWrapperProps {
+    success: boolean;
+}
+
+function SnackbarContentWrapper(props: SnackbarContentWrapperProps) {
+    const {success} = props;
+    const Icon = success ? CheckCircleIcon : ErrorIcon;
+    const message = success ? 'Билеты заказаны успешно!' : 'Произошла ошибка при заказе билетов!';
+    const classes = success ? 'successful-snackbar' : 'error-snackbar';
+
+    return (
+        <SnackbarContent
+            className={classes}
+            message={
+                <div className='snackbar-message-wrapper'>
+                    <div className='snackbar-icon-wrapper'><Icon/></div>
+                    {message}
+                </div>
+            }
+        />
+    );
+}

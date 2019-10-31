@@ -1,11 +1,11 @@
 import *  as React from 'react';
 import './PerformanceCard.css';
-import {Performance} from "../../../models/PerformancesDTOModel";
-import {SessionsByPerformancesItem} from "../TicketOrder";
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
+import {SessionsByPerformancesItem} from "../../TicketOrder";
+import {Performance} from "../../../../models/PerformancesDTOModel";
 
 type Props = {
     performance: Performance;
@@ -49,6 +49,7 @@ export class PerformanceCard extends React.Component<Props, State> {
         const {selectedSessionId} = this.state;
         const {sessions} = this.props;
         let content = null;
+
         if (!sessions || !sessions.length)
             content = 'Нет сеансов для выбора'
         else {

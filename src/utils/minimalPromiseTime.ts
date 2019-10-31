@@ -6,3 +6,12 @@ export const resolveAfterDelay = function <T>(result: T, time: number = 0): Prom
     });
 
 };
+
+export const rejectAfterDelay = function (result: unknown, time: number = 0): Promise<void> {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject()
+        }, time)
+    });
+
+};
